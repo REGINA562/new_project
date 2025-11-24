@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: student-manager
+    env: node
+    plan: free
+    repo: <YOUR_GIT_REPO_URL>
+    branch: main
+    buildCommand: "npm install && npm run init-db"
+    startCommand: "npm start"
+    envVars:
+      - key: PORT
+        value: "10000"
+      # DATABASE_URL and SESSION_SECRET set via Render dashboard

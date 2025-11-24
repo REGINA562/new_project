@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<h3>Добавить ученика</h3>
+<form method="post" action="/students/add" enctype="multipart/form-data">
+  <div class="mb-3"><label>ФИО</label><input name="full_name" class="form-control" required></div>
+  <div class="mb-3"><label>Возраст</label><input name="age" class="form-control" type="number"></div>
+  <div class="mb-3"><label>Телефон</label><input name="phone" class="form-control"></div>
+  <div class="mb-3"><label>Email</label><input name="email" class="form-control" type="email"></div>
+  <div class="mb-3"><label>Уровень</label><input name="level" class="form-control"></div>
+  <div class="mb-3"><label>Фото</label><input name="photo" type="file" class="form-control"></div>
+  <div class="mb-3"><label>Оплачено до</label><input name="paid_until" class="form-control"></div>
+  <button class="btn btn-success">Добавить</button>
+</form>

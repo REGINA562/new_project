@@ -1,0 +1,31 @@
+<% layout('layout') -%>
+<div class="row">
+  <div class="col-md-4">
+    <h4><%= student.full_name %></h4>
+    <% if (student.photo) { %>
+      <img src="/uploads/<%= student.photo %>" class="img-fluid mb-2" alt="photo" />
+    <% } %>
+    <p>Телефон: <%= student.phone || '-' %></p>
+    <p>Email: <%= student.email || '-' %></p>
+    <p>Уровень: <%= student.level || '-' %></p>
+    <p>Оплачено: <%= student.paid_until || '-' %></p>
+  </div>
+  <div class="col-md-8">
+    <h5>Заметки</h5>
+    <a class="btn btn-sm btn-primary mb-2" href="/students/<%= student.id %>/notes/add">Добавить заметку</a>
+    <ul class="list-group">
+      <% notes.forEach(n=>{ %>
+        <li class="list-group-item">
+          <div><small class="text-muted"><%= n.created_at %> — <%= n.author_name || 'Публичный' %></small></div>
+          <p><%= n.content %></p>
+          <% if (n.attachment) { %>
+            <a href="/uploads/<%= n.attachment %>" target="_blank">Вложение</a>
+          <% } %>
+          <form action="/notes/<%= n.id %>?_method=DELETE" method="post" class="d-inline" onsubmit="return confirm('Удалить заметку?')">
+            <button class="btn btn-sm btn-outline-danger">Удалить</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

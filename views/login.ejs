@@ -1,0 +1,13 @@
+<% layout('layout') -%>
+<form method="post" action="/login" class="mx-auto" style="max-width:420px">
+  <h3>Вход</h3>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input name="email" class="form-control" required />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Пароль</label>
+    <input name="password" type="password" class="form-control" required />
+  </div>
+  <button class="btn btn-primary">Войти</button>
+</form>

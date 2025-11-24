@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<h3>Регистрация ученика</h3>
+<form method="post" action="/register" enctype="multipart/form-data">
+  <div class="mb-3"><label>ФИО</label><input name="full_name" class="form-control" required></div>
+  <div class="mb-3"><label>Возраст</label><input name="age" type="number" class="form-control"></div>
+  <div class="mb-3"><label>Телефон</label><input name="phone" class="form-control"></div>
+  <div class="mb-3"><label>Email</label><input name="email" type="email" class="form-control"></div>
+  <div class="mb-3"><label>Уровень</label><input name="level" class="form-control"></div>
+  <div class="mb-3"><label>Фото</label><input name="photo" type="file" class="form-control"></div>
+  <div class="mb-3"><label>Коротко о себе</label><textarea name="initial_note" class="form-control"></textarea></div>
+  <button class="btn btn-primary">Отправить</button>
+</form>

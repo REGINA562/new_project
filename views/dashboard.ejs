@@ -1,0 +1,13 @@
+<% layout('layout') -%>
+<div class="row">
+  <div class="col-md-8">
+    <h2>Панель</h2>
+    <p>Ученики: <strong><%= totalStudents %></strong> — Заметки: <strong><%= totalNotes %></strong></p>
+    <h5>Недавние ученики</h5>
+    <ul class="list-group">
+      <% recent.forEach(s=>{ %>
+        <li class="list-group-item"><a href="/students/<%= s.id %>"><%= s.full_name %></a></li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

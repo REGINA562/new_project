@@ -1,0 +1,7 @@
+<% layout('layout') -%>
+<h4>Добавить заметку ученику: <%= student.full_name %></h4>
+<form method="post" action="/students/<%= student.id %>/notes/add" enctype="multipart/form-data">
+  <div class="mb-3"><label>Заметка</label><textarea name="content" class="form-control" required></textarea></div>
+  <div class="mb-3"><label>Вложение</label><input name="attachment" type="file" class="form-control"></div>
+  <button class="btn btn-success">Добавить</button>
+</form>

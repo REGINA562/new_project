@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<h3>Редактировать</h3>
+<form method="post" action="/students/<%= student.id %>/edit" enctype="multipart/form-data">
+  <div class="mb-3"><label>ФИО</label><input name="full_name" value="<%= student.full_name %>" class="form-control" required></div>
+  <div class="mb-3"><label>Возраст</label><input name="age" value="<%= student.age || '' %>" class="form-control" type="number"></div>
+  <div class="mb-3"><label>Телефон</label><input name="phone" value="<%= student.phone || '' %>" class="form-control"></div>
+  <div class="mb-3"><label>Email</label><input name="email" value="<%= student.email || '' %>" class="form-control" type="email"></div>
+  <div class="mb-3"><label>Уровень</label><input name="level" value="<%= student.level || '' %>" class="form-control"></div>
+  <div class="mb-3"><label>Фото (замена)</label><input name="photo" type="file" class="form-control"></div>
+  <div class="mb-3"><label>Оплачено до</label><input name="paid_until" value="<%= student.paid_until || '' %>" class="form-control"></div>
+  <button class="btn btn-primary">Сохранить</button>
+</form>

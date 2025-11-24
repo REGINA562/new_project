@@ -1,0 +1,23 @@
+<% layout('layout') -%>
+<h3>Список учеников</h3>
+<table class="table">
+  <thead>
+    <tr><th>ФИО</th><th>Телефон</th><th>Уровень</th><th></th></tr>
+  </thead>
+  <tbody>
+  <% students.forEach(s=>{ %>
+    <tr>
+      <td><a href="/students/<%= s.id %>"><%= s.full_name %></a></td>
+      <td><%= s.phone || '' %></td>
+      <td><%= s.level || '' %></td>
+      <td>
+        <a class="btn btn-sm btn-outline-primary" href="/students/<%= s.id %>">Открыть</a>
+        <a class="btn btn-sm btn-outline-secondary" href="/students/<%= s.id %>/edit">Изменить</a>
+        <form action="/students/<%= s.id %>?_method=DELETE" method="post" class="d-inline" onsubmit="return confirm('Удалить?')">
+          <button class="btn btn-sm btn-outline-danger">Удалить</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>
