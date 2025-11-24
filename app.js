@@ -1,4 +1,5 @@
 require('dotenv').config();
+const engine = require('ejs-mate');
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -34,6 +35,7 @@ const upload = multer({
 });
 
 // view engine
+app.engine('ejs', engine);     
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
