@@ -9,7 +9,7 @@ if (!connectionString) {
 
 const pool = new Pool({
   connectionString,
-  // ssl: { rejectUnauthorized: false } // enable if your DB requires SSL
+   ssl: { rejectUnauthorized: false } // enable if your DB requires SSL
 });
 
 module.exports = {
